@@ -14,6 +14,11 @@ defmodule HealthTrackerWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :protected do
+    plug Pow.Plug.RequireAuthenticated,
+      error_handler: Pow.Phoenix.PlugErrorHandler
+  end
+
   scope "/" do
     pipe_through :browser
 
@@ -24,6 +29,12 @@ defmodule HealthTrackerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/", HealthTrackerWeb do
+    pipe_through [:browser, :protected]
+
+    resources "/categories", CategoryController
   end
 
   # Other scopes may use custom stacks.
