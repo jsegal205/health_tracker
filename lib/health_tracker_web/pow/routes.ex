@@ -1,4 +1,7 @@
 defmodule HealthTrackerWeb.Pow.Routes do
+  @moduledoc """
+  Adds custom callback handlers for Pow
+  """
   use Pow.Phoenix.Routes
   alias HealthTrackerWeb.Router.Helpers, as: Routes
 

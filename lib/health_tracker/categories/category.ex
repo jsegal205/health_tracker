@@ -1,4 +1,7 @@
 defmodule HealthTracker.Categories.Category do
+  @moduledoc """
+  Category Schema and changeset
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

@@ -1,4 +1,7 @@
 defmodule HealthTracker.Users.User do
+  @moduledoc """
+  User schema
+  """
   use Ecto.Schema
   use Pow.Ecto.Schema
 
