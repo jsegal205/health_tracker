@@ -9,15 +9,15 @@ on:
 env:
   MIX_ENV: test
 
-strategy:
-  matrix:
-    elixir: [1.11.4]
-    otp: [23.2.7]
-
 jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        elixir: [1.11.4]
+        otp: [23.2.7]
 
     steps:
       - uses: actions/checkout@v2
