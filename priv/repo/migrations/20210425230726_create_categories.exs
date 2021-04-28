@@ -7,6 +7,5 @@ defmodule HealthTracker.Repo.Migrations.CreateCategories do
 
       timestamps()
     end
-
   end
 end
