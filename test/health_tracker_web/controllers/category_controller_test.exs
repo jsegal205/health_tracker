@@ -1,12 +1,8 @@
 defmodule HealthTrackerWeb.CategoryControllerTest do
   use HealthTrackerWeb.ConnCase
 
-  # import Ecto
-
-  # alias HealthTracker.Categories
   alias HealthTracker.{Repo, Categories, Users.User}
 
-  # @user_id
   @create_attrs %{title: "some title"}
   @update_attrs %{title: "some updated title"}
   @invalid_attrs %{title: nil}
@@ -20,12 +16,6 @@ defmodule HealthTrackerWeb.CategoryControllerTest do
   end
 
   setup %{conn: conn} do
-    # user = %HealthTracker.Users.User{email: "test@example.com", password: "password"}
-
-    # # :ok = Ecto.Adapters.SQL.Sandbox.checkout(Repo)
-
-    # {:ok, user} = Repo.insert!(user)
-
     user =
       %User{}
       |> User.changeset(%{
