@@ -16,6 +16,8 @@ defmodule HealthTracker.DataCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       alias HealthTracker.Repo
@@ -28,10 +30,10 @@ defmodule HealthTracker.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(HealthTracker.Repo)
+    :ok = Sandbox.checkout(HealthTracker.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(HealthTracker.Repo, {:shared, self()})
+      Sandbox.mode(HealthTracker.Repo, {:shared, self()})
     end
 
     :ok
