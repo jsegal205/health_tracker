@@ -4,6 +4,7 @@ defmodule HealthTracker.Categories.Category do
 
   schema "categories" do
     field :title, :string
+    field :user_id, :binary_id
 
     timestamps()
   end
@@ -11,7 +12,7 @@ defmodule HealthTracker.Categories.Category do
   @doc false
   def changeset(category, attrs) do
     category
-    |> cast(attrs, [:title])
+    |> cast(attrs, [:title, :user_id])
     |> validate_required([:title])
   end
 end

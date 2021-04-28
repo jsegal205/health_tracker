@@ -17,8 +17,12 @@ defmodule HealthTracker.Categories do
       [%Category{}, ...]
 
   """
-  def list_categories do
-    Repo.all(Category)
+  def list_categories(current_user_id) do
+    query =
+      from c in Category,
+        where: c.user_id == ^current_user_id
+
+    Repo.all(query)
   end
 
   @doc """
@@ -35,7 +39,8 @@ defmodule HealthTracker.Categories do
       ** (Ecto.NoResultsError)
 
   """
-  def get_category!(id), do: Repo.get!(Category, id)
+  def get_category(id, current_user_id),
+    do: Repo.get_by(Category, %{id: id, user_id: current_user_id})
 
   @doc """
   Creates a category.
