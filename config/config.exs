@@ -28,7 +28,8 @@ config :phoenix, :json_library, Jason
 
 config :health_tracker, :pow,
   user: HealthTracker.Users.User,
-  repo: HealthTracker.Repo
+  repo: HealthTracker.Repo,
+  routes_backend: HealthTrackerWeb.Pow.Routes
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
