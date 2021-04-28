@@ -1,7 +1,7 @@
 defmodule HealthTrackerWeb.CategoryControllerTest do
   use HealthTrackerWeb.ConnCase
 
-  alias HealthTracker.{Repo, Categories, Users.User}
+  alias HealthTracker.{Categories, Repo, Users.User}
 
   @create_attrs %{title: "some title"}
   @update_attrs %{title: "some updated title"}

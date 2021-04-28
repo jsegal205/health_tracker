@@ -2,7 +2,7 @@ defmodule HealthTracker.CategoriesTest do
   use HealthTracker.DataCase
   use ExUnit.Case, async: true
 
-  alias HealthTracker.{Repo, Categories, Categories.Category, Users.User}
+  alias HealthTracker.{Categories, Categories.Category, Repo, Users.User}
 
   describe "categories" do
     @valid_attrs %{title: "some title"}
